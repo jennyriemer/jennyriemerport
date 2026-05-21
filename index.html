@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jenny Riemer — Digital Marketing + AI Automation</title>
+<meta name="description" content="Jenny Riemer — Digital marketer and AI automation strategist based in Colorado. Social content, SEO, video production, and autonomous AI systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --mag:#D93F6E;
+  --mag-dk:#B8305A;
+  --amb:#B8750A;
+  --amb-dk:#9A6008;
+  --cream:#FAF6EE;
+  --plum:#3D0C22;
+  --plum2:#5A1433;
+  --ink:#1A0A10;
+  --fd:'Bebas Neue',Impact,'Arial Black',sans-serif;
+  --fb:'DM Sans','Helvetica Neue',Arial,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--fb);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem 2.5rem;
+  background:var(--mag);
+}
+.nav-logo{font-family:var(--fd);font-size:1.7rem;letter-spacing:.04em;color:#fff}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:.68rem;font-weight:500;text-transform:uppercase;letter-spacing:.13em;color:rgba(255,255,255,.85);transition:color .2s;white-space:nowrap}
+.nav-links a:hover{color:#fff}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;transition:all .3s}
+.nav-mobile{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--mag);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.nav-mobile.open{display:flex}
+.nav-mobile a{font-family:var(--fd);font-size:2.5rem;letter-spacing:.05em;color:#fff;transition:color .2s}
+.nav-mobile a:hover{color:var(--amb)}
+.nav-mobile-close{position:absolute;top:1.5rem;right:2rem;font-size:2rem;color:#fff;cursor:pointer;font-family:var(--fd);letter-spacing:.05em}
+
+/* ── HERO ── */
+.hero{
+  padding:5rem 2.5rem;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;
+  align-items:center;
+  background:var(--cream);
+  border-bottom:3px solid var(--plum);
+  position:relative;overflow:hidden;
+  min-height:85vh;
+}
+.hero-bg{position:absolute;bottom:-2rem;left:-1rem;font-family:var(--fd);font-size:18vw;color:var(--mag);opacity:.06;pointer-events:none;white-space:nowrap;z-index:0;user-select:none;line-height:1}
+.hero-left{position:relative;z-index:1}
+.eyebrow{display:inline-block;font-size:.68rem;font-weight:500;text-transform:uppercase;letter-spacing:.18em;background:var(--amb);color:#fff;padding:.35rem .9rem;margin-bottom:1.5rem}
+.hero-title{font-family:var(--fd);font-size:clamp(3.5rem,10vw,8.5rem);line-height:.9;letter-spacing:.01em;margin-bottom:1.5rem}
+.t-mag{color:var(--mag)}
+.t-out{-webkit-text-stroke:2.5px var(--plum);color:transparent}
+.hero-desc{font-size:1.05rem;font-weight:400;line-height:1.75;max-width:40ch;margin-bottom:2rem;color:var(--ink)}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-plum{font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;padding:.75rem 1.8rem;background:var(--plum);color:#fff;border:2px solid var(--plum);cursor:pointer;transition:all .2s;display:inline-block}
+.btn-plum:hover{background:var(--plum2);border-color:var(--plum2)}
+.btn-amb{font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;padding:.75rem 1.8rem;background:transparent;color:var(--plum);border:2px solid var(--amb);cursor:pointer;transition:all .2s;display:inline-block}
+.btn-amb:hover{background:var(--amb);color:#fff}
+.stats-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.stat{padding:1.25rem 1rem;border:2px solid var(--plum)}
+.s1{background:var(--mag)}.s2{background:var(--plum)}.s3{background:var(--amb)}.s4{background:var(--plum2)}
+.stat-n{font-family:var(--fd);font-size:3rem;line-height:1;display:block;margin-bottom:.2rem;color:#fff}
+.stat-l{font-size:.6rem;font-weight:500;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.8);line-height:1.3}
+
+/* ── MARQUEE ── */
+.mwrap{overflow:hidden;background:var(--plum);padding:.8rem 0}
+.minner{display:flex;width:max-content;animation:mq 22s linear infinite}
+.minner span{font-family:var(--fd);font-size:1.1rem;letter-spacing:.1em;color:var(--cream);white-space:nowrap;padding:0 1.5rem}
+.minner .dot{color:var(--amb);padding:0 .25rem}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ── SECTIONS ── */
+section{padding:5rem 2.5rem;border-bottom:2px solid rgba(61,12,34,.15)}
+.sh{display:flex;align-items:baseline;gap:1.25rem;margin-bottom:3rem;padding-bottom:1rem;border-bottom:2px solid var(--mag)}
+.sn{font-size:.7rem;font-weight:500;letter-spacing:.16em;color:var(--amb);text-transform:uppercase}
+.st{font-family:var(--fd);font-size:clamp(2.5rem,5vw,4rem);letter-spacing:.03em;line-height:1;color:var(--mag)}
+
+/* ── CAPABILITIES ── */
+.caps-grid{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid var(--plum)}
+.cap{padding:1.75rem 1.5rem;border-right:1.5px solid rgba(61,12,34,.2);border-bottom:1.5px solid rgba(61,12,34,.2);background:var(--cream);transition:background .2s;cursor:default}
+.cap:hover{background:var(--mag)}
+.cap:hover .cap-nm{color:#fff}
+.cap:hover .cap-ds{color:rgba(255,255,255,.8);opacity:1}
+.cap:nth-child(3n){border-right:none}
+.cap:nth-last-child(-n+3){border-bottom:none}
+.cap-ic{font-size:1.5rem;display:block;margin-bottom:.6rem}
+.cap-nm{font-weight:500;font-size:.9rem;margin-bottom:.35rem;color:var(--plum);transition:color .2s}
+.cap-ds{font-size:.78rem;color:var(--ink);opacity:.6;line-height:1.55;transition:color .2s}
+
+/* ── WORK GRID ── */
+.wg{display:grid;grid-template-columns:repeat(12,1fr);gap:1.25rem}
+.wc{border:2px solid var(--plum);overflow:hidden;transition:transform .2s,box-shadow .2s;background:var(--cream)}
+.wc.clickable{cursor:pointer}
+.wc.clickable:hover{transform:translateY(-4px);box-shadow:5px 5px 0 var(--mag)}
+.wc.s7{grid-column:span 7}.wc.s5{grid-column:span 5}
+.wc.s4{grid-column:span 4}.wc.s8{grid-column:span 8}
+.wc.s6{grid-column:span 6}.wc.s12{grid-column:span 12}
+.cb{height:145px;display:flex;align-items:flex-end;padding:1rem;position:relative;overflow:hidden}
+.cb::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(0,0,0,.45))}
+.ctag{position:relative;z-index:1;font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;background:var(--amb);color:#fff;padding:.2rem .6rem}
+.cbody{padding:1.1rem 1.25rem 1.3rem}
+.ctitle{font-family:var(--fd);font-size:1.45rem;letter-spacing:.02em;line-height:1.1;margin-bottom:.35rem;color:var(--mag)}
+.cdesc{font-size:.78rem;color:var(--ink);line-height:1.5;margin-bottom:.85rem}
+.cmeta{display:flex;align-items:center;justify-content:space-between}
+.cclient{font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--plum);opacity:.5}
+.carrow{width:26px;height:26px;border:1.5px solid var(--plum);display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--plum);transition:all .2s}
+.wc.clickable:hover .carrow{background:var(--mag);color:#fff;border-color:var(--mag)}
+
+/* ── VIDEO ── */
+.vg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1.5rem}
+.vc{border:2px solid var(--plum);overflow:hidden;transition:transform .2s,box-shadow .2s;cursor:pointer;background:var(--cream)}
+.vc:hover{transform:translateY(-4px);box-shadow:5px 5px 0 var(--mag)}
+.vt{height:190px;display:flex;align-items:center;justify-content:center;position:relative}
+.pb{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.9);border:2px solid var(--plum);display:flex;align-items:center;justify-content:center;font-size:1rem;position:absolute;bottom:1rem;right:1rem;transition:all .2s;z-index:2;color:var(--plum)}
+.vc:hover .pb{background:var(--mag);border-color:var(--mag);color:#fff}
+.vb{padding:1rem 1.1rem 1.25rem;border-top:1.5px solid rgba(61,12,34,.15)}
+.vp{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:var(--amb);margin-bottom:.3rem}
+.vti{font-weight:500;font-size:.88rem;line-height:1.4;margin-bottom:.25rem;color:var(--plum)}
+.vcl{font-size:.72rem;color:var(--ink);opacity:.5}
+.vl{display:inline-block;margin-top:.6rem;font-size:.68rem;font-weight:500;text-transform:uppercase;letter-spacing:.12em;padding:.3rem .75rem;border:1.5px solid var(--amb);color:var(--amb);transition:all .2s}
+.vl:hover{background:var(--amb);color:#fff}
+
+/* ── AI SECTION ── */
+.ai-sec{background:var(--plum);color:var(--cream)}
+.ai-sec .sh{border-bottom-color:rgba(255,255,255,.15)}
+.ai-sec .sn{color:var(--amb)}
+.ai-sec .st{color:var(--cream)}
+.ai-intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-bottom:3rem;align-items:start}
+.ai-big{font-family:var(--fd);font-size:clamp(2.8rem,5.5vw,5rem);line-height:.95;color:var(--cream)}
+.ai-big em{font-style:normal;color:var(--amb)}
+.ai-body{font-size:.95rem;font-weight:300;line-height:1.8;color:rgba(250,246,238,.7)}
+.pills{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.25rem}
+.pill{font-size:.67rem;font-weight:500;text-transform:uppercase;letter-spacing:.08em;padding:.28rem .75rem;border:1.5px solid rgba(250,246,238,.25);color:rgba(250,246,238,.85);background:transparent;transition:all .2s;cursor:default}
+.pill:hover{background:var(--amb);border-color:var(--amb);color:#fff}
+.aig{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.ap{padding:1.75rem 1.5rem;border:2px solid rgba(250,246,238,.15);position:relative;background:rgba(255,255,255,.05);transition:background .2s}
+.ap:hover{background:rgba(255,255,255,.1)}
+.ap.am{background:var(--mag);border-color:var(--mag)}
+.ap.aa{background:var(--amb);border-color:var(--amb)}
+.an{font-family:var(--fd);font-size:3rem;position:absolute;top:.5rem;right:1rem;opacity:.15;color:#fff}
+.apt{font-size:.6rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.65rem;color:rgba(250,246,238,.5)}
+.ap.am .apt,.ap.aa .apt{color:rgba(255,255,255,.75)}
+.apti{font-weight:500;font-size:.95rem;margin-bottom:.4rem;color:var(--cream)}
+.apd{font-size:.77rem;line-height:1.55;color:rgba(250,246,238,.5)}
+.ap.am .apd,.ap.aa .apd{color:rgba(255,255,255,.8)}
+
+/* ── PROCESS ── */
+.pr{display:grid;grid-template-columns:repeat(4,1fr);border:2px solid var(--plum)}
+.ps{padding:2.25rem 1.5rem;border-right:1.5px solid rgba(61,12,34,.2);background:var(--cream)}
+.ps:last-child{border-right:none}
+.ps-bar{width:36px;height:3px;margin-bottom:.9rem}
+.ps-n{font-family:var(--fd);font-size:3.8rem;line-height:1;color:var(--mag);opacity:.2;margin-bottom:.4rem}
+.ps-ti{font-weight:500;font-size:.9rem;margin-bottom:.35rem;color:var(--plum)}
+.ps-ds{font-size:.77rem;color:var(--ink);opacity:.6;line-height:1.5}
+
+/* ── ABOUT ── */
+.about-centered{max-width:780px;margin:0 auto;text-align:center}
+.about-big{font-family:var(--fd);font-size:clamp(3rem,6vw,5rem);line-height:.95;color:var(--mag);margin-bottom:1.75rem}
+.about-body{font-size:.98rem;font-weight:300;line-height:1.9;color:var(--ink);margin-bottom:2.5rem}
+.about-tags{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+.atag{font-size:.7rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;padding:.4rem .95rem;border:1.5px solid var(--plum);color:var(--plum);transition:all .2s;cursor:default}
+.atag:hover{background:var(--mag);border-color:var(--mag);color:#fff}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.ct-title{font-family:var(--fd);font-size:clamp(3.5rem,8vw,7rem);line-height:.92;letter-spacing:.02em;margin-bottom:1.5rem;color:var(--mag)}
+.ct-title span{-webkit-text-stroke:2px var(--plum);color:transparent}
+.ct-sub{font-size:.95rem;font-weight:300;line-height:1.75;color:var(--ink);opacity:.7;max-width:38ch;margin-bottom:2rem}
+.contact-info{display:flex;flex-direction:column;gap:.85rem}
+.ci-item{display:flex;flex-direction:column;gap:.25rem;padding:1.25rem 1.5rem;border:2px solid var(--plum)}
+.ci-label{font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:var(--amb)}
+.ci-value{font-size:.95rem;font-weight:400;color:var(--plum)}
+.ci-value a{color:var(--plum);transition:color .2s}
+.ci-value a:hover{color:var(--mag)}
+
+/* ── FOOTER ── */
+footer{padding:1.75rem 2.5rem;display:flex;align-items:center;justify-content:space-between;background:var(--plum)}
+.fl{font-family:var(--fd);font-size:1.4rem;letter-spacing:.05em;color:var(--cream)}
+.fc{font-size:.67rem;color:rgba(250,246,238,.4);letter-spacing:.09em;text-transform:uppercase}
+.fll{display:flex;gap:1.5rem}
+.fll a{font-size:.67rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,246,238,.55);transition:color .2s}
+.fll a:hover{color:var(--amb)}
+
+/* ── MOBILE RESPONSIVE ── */
+@media(max-width:768px){
+
+  nav{padding:.85rem 1.5rem}
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+
+  .hero{
+    grid-template-columns:1fr;
+    padding:4rem 1.5rem 3rem;
+    min-height:auto;
+    gap:2.5rem;
+  }
+  .hero-bg{font-size:32vw}
+  .t-out{-webkit-text-stroke:1.5px var(--plum)}
+  .hero-desc{max-width:100%}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat-n{font-size:2.5rem}
+
+  section{padding:3.5rem 1.5rem}
+
+  .caps-grid{grid-template-columns:1fr}
+  .cap{border-right:none}
+  .cap:nth-child(3n){border-right:none}
+  .cap:nth-last-child(-n+3){border-bottom:1.5px solid rgba(61,12,34,.2)}
+  .cap:last-child{border-bottom:none}
+
+  .wg{grid-template-columns:1fr}
+  .wc.s7,.wc.s5,.wc.s4,.wc.s8,.wc.s6,.wc.s12{grid-column:span 1}
+
+  .vg{grid-template-columns:1fr}
+
+  .ai-intro{grid-template-columns:1fr;gap:2rem}
+  .aig{grid-template-columns:1fr}
+
+  .pr{grid-template-columns:1fr 1fr}
+  .ps{border-right:none;border-bottom:1.5px solid rgba(61,12,34,.2)}
+  .ps:last-child{border-bottom:none}
+
+  .contact-grid{grid-template-columns:1fr;gap:2.5rem}
+
+  footer{
+    flex-direction:column;
+    gap:1rem;
+    text-align:center;
+    padding:1.5rem;
+  }
+  .fll{justify-content:center}
+}
+
+@media(max-width:480px){
+  nav{padding:.75rem 1.25rem}
+  .hero{padding:3.5rem 1.25rem 2.5rem}
+  section{padding:3rem 1.25rem}
+  .stats-grid{grid-template-columns:1fr 1fr;gap:.6rem}
+  .stat{padding:1rem .85rem}
+  .stat-n{font-size:2.2rem}
+  .stat-l{font-size:.55rem}
+  .pr{grid-template-columns:1fr}
+  .about-centered{text-align:left}
+  .about-tags{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">Jenny Riemer</span>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#video">Video</a></li>
+    <li><a href="#ai">AI Systems</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="document.querySelector('.nav-mobile').classList.add('open')" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV OVERLAY -->
+<div class="nav-mobile">
+  <span class="nav-mobile-close" onclick="document.querySelector('.nav-mobile').classList.remove('open')">✕</span>
+  <a href="#work" onclick="document.querySelector('.nav-mobile').classList.remove('open')">Work</a>
+  <a href="#video" onclick="document.querySelector('.nav-mobile').classList.remove('open')">Video</a>
+  <a href="#ai" onclick="document.querySelector('.nav-mobile').classList.remove('open')">AI Systems</a>
+  <a href="#about" onclick="document.querySelector('.nav-mobile').classList.remove('open')">About</a>
+  <a href="#contact" onclick="document.querySelector('.nav-mobile').classList.remove('open')">Contact</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg">CREATE</div>
+  <div class="hero-left">
+    <span class="eyebrow">Digital Marketing + AI Automation · Colorado</span>
+    <h1 class="hero-title">
+      <span class="t-mag">Jenny</span><br>
+      <span class="t-out">Riemer</span>
+    </h1>
+    <p class="hero-desc">I build brands that move people and systems that move without them. Social content, SEO, video production, and autonomous AI infrastructure, all under one roof.</p>
+    <div class="hero-btns">
+      <a href="#work" class="btn-plum">View My Work</a>
+      <a href="#ai" class="btn-amb">AI Systems</a>
+    </div>
+  </div>
+  <div class="stats-grid">
+    <div class="stat s1"><span class="stat-n">70+</span><span class="stat-l">Sites Automated</span></div>
+    <div class="stat s2"><span class="stat-n">10+</span><span class="stat-l">Brands Managed</span></div>
+    <div class="stat s3"><span class="stat-n">90%</span><span class="stat-l">Time Savings via AI Automation</span></div>
+    <div class="stat s4"><span class="stat-n">24/7</span><span class="stat-l">Personalized AI Agents Running</span></div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="mwrap">
+  <div class="minner">
+    <span>Social Media</span><span class="dot">✦</span>
+    <span>SEO Strategy</span><span class="dot">✦</span>
+    <span>AI Automation</span><span class="dot">✦</span>
+    <span>UGC Content</span><span class="dot">✦</span>
+    <span>Video Editing</span><span class="dot">✦</span>
+    <span>Zoho CRM</span><span class="dot">✦</span>
+    <span>Web Development</span><span class="dot">✦</span>
+    <span>Autonomous Agents</span><span class="dot">✦</span>
+    <span>Paid Ads</span><span class="dot">✦</span>
+    <span>Brand Strategy</span><span class="dot">✦</span>
+    <span>Social Media</span><span class="dot">✦</span>
+    <span>SEO Strategy</span><span class="dot">✦</span>
+    <span>AI Automation</span><span class="dot">✦</span>
+    <span>UGC Content</span><span class="dot">✦</span>
+    <span>Video Editing</span><span class="dot">✦</span>
+    <span>Zoho CRM</span><span class="dot">✦</span>
+    <span>Web Development</span><span class="dot">✦</span>
+    <span>Autonomous Agents</span><span class="dot">✦</span>
+    <span>Paid Ads</span><span class="dot">✦</span>
+    <span>Brand Strategy</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- WHAT I DO -->
+<section>
+  <div class="sh"><span class="sn">01</span><h2 class="st">What I Do</h2></div>
+  <div class="caps-grid">
+    <div class="cap">
+      <span class="cap-ic">📱</span>
+      <p class="cap-nm">Social Media Management</p>
+      <p class="cap-ds">Full service strategy, content calendars, on-platform management, and community engagement across Instagram, TikTok, LinkedIn, and Facebook.</p>
+    </div>
+    <div class="cap">
+      <span class="cap-ic">🎬</span>
+      <p class="cap-nm">Video Production and Editing</p>
+      <p class="cap-ds">Concept to publish, scripting, filming, editing reels and short-form video. UGC-style content, paid ads, and branded short-form.</p>
+    </div>
+    <div class="cap">
+      <span class="cap-ic">🔍</span>
+      <p class="cap-nm">SEO and Content Strategy</p>
+      <p class="cap-ds">Keyword research, Screaming Frog audits, content calendars, city page optimization, and long-form blog strategy.</p>
+    </div>
+    <div class="cap">
+      <span class="cap-ic">🤖</span>
+      <p class="cap-nm">AI Automation Systems</p>
+      <p class="cap-ds">Autonomous agents, voice pipelines, and end-to-end automations using Claude, Make.com, n8n, and custom Zoho workflows.</p>
+    </div>
+    <div class="cap">
+      <span class="cap-ic">💻</span>
+      <p class="cap-nm">Web Development</p>
+      <p class="cap-ds">Production websites built with Lovable, CRM dashboards, client portals, and custom Zoho Creator apps with Deluge scripting.</p>
+    </div>
+    <div class="cap">
+      <span class="cap-ic">🎯</span>
+      <p class="cap-nm">Paid Social and UGC</p>
+      <p class="cap-ds">Performance-driven paid ad creative and authentic UGC content that converts across TikTok, Instagram Reels, and YouTube Shorts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SELECTED WORK -->
+<section id="work">
+  <div class="sh"><span class="sn">02</span><h2 class="st">Selected Work</h2></div>
+  <div class="wg">
+
+    <div class="wc s7 clickable" onclick="window.open('https://konstructbrewing.com/','_blank')">
+      <div class="cb" style="background:var(--plum)"><span class="ctag">Web Development</span></div>
+      <div class="cbody">
+        <h3 class="ctitle">Website Development via Lovable</h3>
+        <p class="cdesc">Built 4 production websites using Lovable and AI-assisted development, cutting build time from weeks to days. Featured: Konstruct Brewing, a full brewery site with menus, event listings, and brand identity baked in.</p>
+        <div class="cmeta"><span class="cclient">Konstruct Brewing and 3 others</span><div class="carrow">→</div></div>
+      </div>
+    </div>
+
+    <div class="wc s5 clickable" onclick="window.open('https://www.youtube.com/@with_SpencerPatton/shorts','_blank')">
+      <div class="cb" style="background:var(--amb)"><span class="ctag" style="background:var(--plum)">Content and Podcast</span></div>
+      <div class="cbody">
+        <h3 class="ctitle">Podcast Social Package</h3>
+        <p class="cdesc">Pull-quote titles, weekly captions, and short-form video cuts for Spencer Patton's creator channel. Scheduled via Loomly using Descript transcripts.</p>
+        <div class="cmeta"><span class="cclient">Patton Creative Group</span><div class="carrow">→</div></div>
+      </div>
+    </div>
+
+    <div class="wc s5">
+      <div class="cb" style="background:var(--plum2)"><span class="ctag">AI Tool + Automation</span></div>
+      <div class="cbody">
+        <h3 class="ctitle">TSP Fund Allocator and Email Follow-Up</h3>
+        <p class="cdesc">AI-powered TSP fund allocation calculator for federal employees with automated email follow-up sequences to guide clients through their benefits decisions.</p>
+        <div class="cmeta"><span class="cclient">United Benefits</span><div class="carrow">→</div></div>
+      </div>
+    </div>
+
+    <div class="wc s7">
+      <div class="cb" style="background:#1a2744"><span class="ctag">Content + AI Automation</span></div>
+      <div class="cbody">
+        <h3 class="ctitle">United Benefits — Full Digital Presence</h3>
+        <p class="cdesc">End-to-end digital marketing for a federal employee benefits firm: AI agent dashboard for client intake, automated blog post pipeline, 30-topic content calendar covering FERS, TSP, FEHB, and FEGLI, Reddit auto-response system for federal communities, and a React chatbot for the government shutdown FAQ.</p>
+        <div class="cmeta"><span class="cclient">United Benefits</span><div class="carrow">→</div></div>
+      </div>
+    </div>
+
+    <div class="wc s6">
+      <div class="cb" style="background:var(--mag)"><span class="ctag" style="background:var(--plum)">Mobile App · In Progress</span></div>
+      <div class="cbody">
+        <h3 class="ctitle">Stained Glass Estimator App</h3>
+        <p class="cdesc">Field estimators photograph church windows on-site, add notes, and receive a full AI-generated proposal delivered to the client via their own private landing page.</p>
+        <div class="cmeta"><span class="cclient">Scottish Stained Glass</span><div class="carrow">→</div></div>
+      </div>
+    </div>
+
+    <div class="wc s6 clickable" onclick="window.open('https://www.youtube.com/@switchbackchiropractic/shorts','_blank')">
+      <div class="cb" style="background:#0D1B2A"><span class="ctag">Full Social Media Management</span></div>
+      <div class="cbody">
+        <h3 class="ctitle">Switchback Chiropractic</h3>
+        <p class="cdesc">End-to-end social media management: script writing, filming, editing, posting, and on-platform management. Functional medicine education, DRX9000 content, chiropractic reels, and holiday series. Every post handled from concept to live.</p>
+        <div class="cmeta"><span class="cclient">Switchback Chiropractic · Arvada, CO</span><div class="carrow">→</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VIDEO AND CONTENT -->
+<section id="video">
+  <div class="sh"><span class="sn">03</span><h2 class="st">Video and Content</h2></div>
+  <p style="font-size:.95rem;color:var(--ink);line-height:1.7;max-width:55ch;margin-bottom:2rem">Short-form video production, UGC content strategy, and paid social ads from scripting and filming through editing and posting.</p>
+  <div class="vg">
+    <div class="vc" onclick="window.open('https://www.tiktok.com/@thecpapshop','_blank')">
+      <div class="vt" style="background:#010101">
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem">
+          <span style="font-family:var(--fd);font-size:2rem;color:#fff;letter-spacing:.12em">THE CPAP</span>
+          <span style="font-family:var(--fd);font-size:2rem;color:#69C9D0;letter-spacing:.12em">SHOP</span>
+        </div>
+        <div class="pb">▶</div>
+        <div style="position:absolute;top:.75rem;left:.75rem;background:var(--amb);color:#fff;font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.2rem .55rem">TikTok · UGC</div>
+      </div>
+      <div class="vb">
+        <p class="vp">TikTok</p>
+        <p class="vti">The CPAP Shop</p>
+        <p class="vcl">Authentic UGC content for sleep health consumers</p>
+        <a href="https://www.tiktok.com/@thecpapshop" target="_blank" class="vl" onclick="event.stopPropagation()">View on TikTok</a>
+      </div>
+    </div>
+    <div class="vc" onclick="window.open('https://www.youtube.com/@Thecpapshop/shorts','_blank')">
+      <div class="vt" style="background:#1A0000">
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem">
+          <span style="font-size:2.5rem;color:#FF0000">▶</span>
+          <span style="font-family:var(--fd);font-size:1.3rem;color:#fff;letter-spacing:.1em">YouTube Shorts</span>
+        </div>
+        <div class="pb">▶</div>
+        <div style="position:absolute;top:.75rem;left:.75rem;background:var(--amb);color:#fff;font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.2rem .55rem">YouTube · UGC</div>
+      </div>
+      <div class="vb">
+        <p class="vp">YouTube Shorts</p>
+        <p class="vti">The CPAP Shop</p>
+        <p class="vcl">Short-form UGC adapted for YouTube's discovery algorithm</p>
+        <a href="https://www.youtube.com/@Thecpapshop/shorts" target="_blank" class="vl" onclick="event.stopPropagation()">View on YouTube</a>
+      </div>
+    </div>
+    <div class="vc" onclick="window.open('https://www.instagram.com/reel/DYMfJJzETdj/','_blank')">
+      <div class="vt" style="background:#2D1B3D">
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;text-align:center;padding:1rem">
+          <span style="font-size:2rem;color:var(--mag)">▶</span>
+          <span style="font-family:var(--fd);font-size:1.4rem;color:#fff;letter-spacing:.08em">Instagram Reels</span>
+          <span style="font-size:.68rem;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase">Paid Ad</span>
+        </div>
+        <div class="pb">▶</div>
+        <div style="position:absolute;top:.75rem;left:.75rem;background:var(--mag);color:#fff;font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.2rem .55rem">Paid Ad</div>
+      </div>
+      <div class="vb">
+        <p class="vp">Instagram Reels</p>
+        <p class="vti">Brewery Paid Social Ad</p>
+        <p class="vcl">Performance-focused paid ad creative for brewery client</p>
+        <a href="https://www.instagram.com/reel/DYMfJJzETdj/" target="_blank" class="vl" onclick="event.stopPropagation()">Watch the Reel</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI SYSTEMS -->
+<section id="ai" class="ai-sec">
+  <div class="sh"><span class="sn">04</span><h2 class="st">AI Systems</h2></div>
+  <div class="ai-intro">
+    <div><h3 class="ai-big">Systems that run <em>without you.</em></h3></div>
+    <div>
+      <p class="ai-body">I design and deploy autonomous AI infrastructure from voice intake pipelines to full agent dashboards where users assign tasks and agents execute end-to-end. Not demos. Production systems running right now.</p>
+      <div class="pills">
+        <span class="pill">Claude</span>
+        <span class="pill">Make.com</span>
+        <span class="pill">n8n</span>
+        <span class="pill">Retell AI</span>
+        <span class="pill">OpenClaw</span>
+        <span class="pill">Zoho CRM</span>
+        <span class="pill">Lovable</span>
+        <span class="pill">Google AI Studio</span>
+        <span class="pill">Claude Code</span>
+        <span class="pill">HeyGen</span>
+      </div>
+    </div>
+  </div>
+  <div class="aig">
+    <div class="ap">
+      <span class="an">01</span>
+      <p class="apt">Voice Agent</p>
+      <p class="apti">AI Voice Intake System</p>
+      <p class="apd">Autonomous intake pipeline for Social Security Disability cases. A voice agent conducts a structured 50+ question interview and hands off to a computer use agent with zero human touch.</p>
+    </div>
+    <div class="ap am">
+      <span class="an">02</span>
+      <p class="apt">Agent Dashboard</p>
+      <p class="apti">Autonomous Agent Backend</p>
+      <p class="apd">A backend dashboard where AI agents run 24/7. Users log in, assign tasks, agents execute and surface results. Full task lifecycle management with no human ops required.</p>
+    </div>
+    <div class="ap">
+      <span class="an">03</span>
+      <p class="apt">Content Pipeline</p>
+      <p class="apti">70-Site Blog and Image Pipeline</p>
+      <p class="apd">Make.com and n8n system publishing AI-generated content and images to 70+ websites daily with 90%+ time savings over manual publishing workflows.</p>
+    </div>
+    <div class="ap">
+      <span class="an">04</span>
+      <p class="apt">ClawBot · Always On</p>
+      <p class="apti">Mac Mini Autonomous Agent</p>
+      <p class="apd">A dedicated Mac Mini running ClawBot around the clock handling SEO tasks, Instagram DM outreach, and monthly reporting with no manual triggers.</p>
+    </div>
+    <div class="ap aa">
+      <span class="an">05</span>
+      <p class="apt">AI Tool · Federal Benefits</p>
+      <p class="apti">TSP Fund Allocator and Email Follow-Up</p>
+      <p class="apd">AI-powered calculator recommending TSP fund allocations for federal employees based on their goals, paired with an automated email follow-up sequence guiding their next steps.</p>
+    </div>
+    <div class="ap">
+      <span class="an">06</span>
+      <p class="apt">Mobile App · In Progress</p>
+      <p class="apti">Stained Glass Estimator</p>
+      <p class="apd">Field estimators photograph church windows on-site, add notes, and receive a full AI-generated proposal delivered to the client via a private landing page.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW I WORK -->
+<section>
+  <div class="sh"><span class="sn">05</span><h2 class="st">How I Work</h2></div>
+  <div class="pr">
+    <div class="ps">
+      <div class="ps-bar" style="background:var(--mag)"></div>
+      <div class="ps-n">01</div>
+      <p class="ps-ti">Understand the Business</p>
+      <p class="ps-ds">Deep dive into goals, audience, competitors, and current systems before touching a single deliverable.</p>
+    </div>
+    <div class="ps">
+      <div class="ps-bar" style="background:var(--amb)"></div>
+      <div class="ps-n">02</div>
+      <p class="ps-ti">Build the Strategy</p>
+      <p class="ps-ds">Content calendars, automation maps, or SEO frameworks. Every engagement starts with a documented plan.</p>
+    </div>
+    <div class="ps">
+      <div class="ps-bar" style="background:var(--mag)"></div>
+      <div class="ps-n">03</div>
+      <p class="ps-ti">Execute at Speed</p>
+      <p class="ps-ds">Ship fast. Reels, blog posts, Zoho apps, AI pipelines. All built to production standard, quickly.</p>
+    </div>
+    <div class="ps" style="border-right:none">
+      <div class="ps-bar" style="background:var(--amb)"></div>
+      <div class="ps-n">04</div>
+      <p class="ps-ti">Systemize and Scale</p>
+      <p class="ps-ds">Everything that can run without me, does. Automations, agents, and workflows that compound over time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sh"><span class="sn">06</span><h2 class="st">About Me</h2></div>
+  <div class="about-centered">
+    <h3 class="about-big">Colorado Native.<br>Digital Marketer.<br>AI Builder.</h3>
+    <p class="about-body">
+      I have been working in the digital marketing industry for over 2 years, growing brands across social media, SEO, video, and web. A Colorado native, I am currently based here and love everything the state has to offer.<br><br>
+      This year I made a deliberate shift toward building and deploying AI agents that streamline real business needs, while staying deeply rooted in the social and creative side of marketing. I believe the best work happens when human creativity and autonomous systems work together.<br><br>
+      Outside of work I enjoy traveling, skiing, biking, and hunting down the best food and drink spots wherever I land.
+    </p>
+    <div class="about-tags">
+      <span class="atag">Colorado Native</span>
+      <span class="atag">2+ Years in Digital Marketing</span>
+      <span class="atag">AI Automation</span>
+      <span class="atag">Content Creator</span>
+      <span class="atag">Skier</span>
+      <span class="atag">Traveler</span>
+      <span class="atag">Foodie</span>
+      <span class="atag">Biker</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sh"><span class="sn">07</span><h2 class="st">Get In Touch</h2></div>
+  <div class="contact-grid">
+    <div>
+      <h3 class="ct-title">Let's<br><span>Build</span><br>Something.</h3>
+      <p class="ct-sub">Whether you need content that converts, systems that scale, or both, I am ready to dig in.</p>
+    </div>
+    <div class="contact-info">
+      <div class="ci-item">
+        <span class="ci-label">Email</span>
+        <span class="ci-value"><a href="mailto:jriemermedia@gmail.com">jriemermedia@gmail.com</a></span>
+      </div>
+      <div class="ci-item">
+        <span class="ci-label">LinkedIn</span>
+        <span class="ci-value"><a href="https://www.linkedin.com/in/jennyriemer/" target="_blank">linkedin.com/in/jennyriemer</a></span>
+      </div>
+      <div class="ci-item">
+        <span class="ci-label">AI Portfolio</span>
+        <span class="ci-value"><a href="https://ai-portfolio-chi-black.vercel.app/" target="_blank">ai-portfolio-chi-black.vercel.app</a></span>
+      </div>
+      <div class="ci-item">
+        <span class="ci-label">Location</span>
+        <span class="ci-value">Colorado, USA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="fl">Jenny Riemer</span>
+  <span class="fc">© 2026 · Colorado, USA</span>
+  <div class="fll">
+    <a href="https://www.linkedin.com/in/jennyriemer/" target="_blank">LinkedIn</a>
+    <a href="https://ai-portfolio-chi-black.vercel.app/" target="_blank">AI Portfolio</a>
+    <a href="mailto:jriemermedia@gmail.com">Email</a>
+  </div>
+</footer>
+
+</body>
+</html>
